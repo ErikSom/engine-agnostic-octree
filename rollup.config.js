@@ -16,7 +16,7 @@ export default [
 		{
 			file: 'dist/bundle.umd.js',
 			format: 'umd',
-			name: 'octree'
+			name: 'Octree'
 		}],
 		plugins: [
 			typescript({
