@@ -97,15 +97,10 @@ export class OctreeBlock<T> {
         const boundingBoxWorld = b;
 
         // If the mesh is static, we can cache the world bounding box
-        if(entry.isStatic){
-            if(!entry._maxWorldBoundingBox){
-                entry._maxWorldBoundingBox = entry.computeWorldBoundingBox(entry._maxBoundingBox!);
-            }
-            boundingBoxWorld.copy(entry._maxWorldBoundingBox!);
-        }else{
-            boundingBoxWorld.copy(entry._maxBoundingBox!);
-            entry._maxWorldBoundingBox = entry.computeWorldBoundingBox(boundingBoxWorld);
+        if(!entry.isStatic || !entry._maxWorldBoundingBox){
+             entry._maxWorldBoundingBox = entry.computeWorldBoundingBox(entry._maxBoundingBox!);
         }
+        boundingBoxWorld.copy(entry._maxWorldBoundingBox!);
 
         let added = false;
         if (boundingBoxWorld?.intersectsBox(this.box)) {
