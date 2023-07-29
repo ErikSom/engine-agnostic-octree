@@ -104,7 +104,7 @@ export class OctreeBlock<T> {
             boundingBoxWorld.copy(entry._maxWorldBoundingBox!);
         }else{
             boundingBoxWorld.copy(entry._maxBoundingBox!);
-            entry.computeWorldBoundingBox(boundingBoxWorld);
+            entry._maxWorldBoundingBox = entry.computeWorldBoundingBox(boundingBoxWorld);
         }
 
         let added = false;
