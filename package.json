@@ -1,6 +1,6 @@
 {
   "name": "engine-agnostic-octree",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Engine agnostic Octree implementation",
   "main": "src/octree.ts",
   "author": "Erik Sombroek",
